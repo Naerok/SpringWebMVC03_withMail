@@ -168,9 +168,21 @@
 <body>
 
 <div class = "container">
-	<h2>Spring WEB MVC02(JQuery+Ajax+JSON)</h2>
+	<h2>BOARD</h2>
 	<div class = "panel panel-default">
-	<div class = "panel-heading">SPRING BOARD</div>
+	<div class = "panel-heading">
+		<form class="form-inline" action="/action_page.php">
+		  <div class="form-group">
+		    <label for="memId">아이디 : </label>
+		    <input type="text" class="form-control" name="memId" id="memId">
+		  </div>
+		  <div class="form-group">
+		    <label for="pwd">패스워드 : </label>
+		    <input type="password" class="form-control" name="memPass" id="memPass">
+		  </div>
+		  <button type="submit" class="btn btn-primary">로그인</button>
+		</form>
+	</div>
 	<div class = "panel-body blist">Panel Content</div>
 	<div class = "panel-body rform" style="display: none">
 		<!-- 글쓰기 화면 -->

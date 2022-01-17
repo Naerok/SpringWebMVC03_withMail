@@ -18,11 +18,7 @@ import kr.board.mapper.BoardMapper;
 
 @Controller // POJO
 public class BoardController {
-	
-	@Autowired
-	private BoardMapper mapper;
-	//HandlerMapping
-	
+
 	@RequestMapping("/")
 	public String main() {
 		return "basic";

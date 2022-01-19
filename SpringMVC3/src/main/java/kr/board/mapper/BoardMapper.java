@@ -25,6 +25,8 @@ public interface BoardMapper {
 	@Update("update board set title=#{title}, writer=#{writer} where idx=#{idx}")
 	public void boardTWUpdateAjax(Board vo);
 	
-	@Select("select * from member where memID=#{memID} and memPass=#{memPass}")
+	@Select("select * from member where memId=#{memId} and memPass=#{memPass}")
 	public Member login(Member vo);
+	
+	
 }

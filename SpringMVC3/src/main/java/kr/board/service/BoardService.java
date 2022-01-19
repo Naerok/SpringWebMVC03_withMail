@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import kr.board.domain.Board;
+import kr.board.domain.Member;
 import kr.board.mapper.BoardMapper;
 
 @Service
@@ -30,6 +31,8 @@ public class BoardService {
 	public void boardTWUpdateAjax(Board vo) {
 		mapper.boardTWUpdateAjax(vo);
 	}
-	
+	public Member login(Member vo) {
+		return mapper.login(vo);
+	}
 	
 }

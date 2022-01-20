@@ -186,10 +186,12 @@
 			</form>
 		</c:if>
 		<c:if test="${!empty mvo}">
-			<div class="form-group">
-				<label>${mvo.memName}님 방문을 환영합니다.</label>
-				<button class="btn btn-info btn-sm">로그아웃</button>
-			</div>
+			<form action="${cpath}/logout.do" method="post">
+				<div class="form-group">
+					<label>${mvo.memName}님 방문을 환영합니다.</label>
+					<button class="btn btn-info btn-sm">로그아웃</button>
+				</div>
+			</form>
 		</c:if>
 	</div>
 	<div class = "panel-body blist">Panel Content</div>
@@ -213,7 +215,7 @@
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="writer">작성자:</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer">
+		      <input type="text" class="form-control" id="writer" name="writer" placeholder="Enter writer" value="${mvo.memName }" readonly="readonly">
 		    </div>
 		  </div>
 		  

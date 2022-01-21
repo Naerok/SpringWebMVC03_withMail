@@ -58,10 +58,15 @@
   	    	blist+="<td id='w"+obj.idx+"'>"+obj.writer+"</td>";
   	    	blist+="<td>"+obj.indate+"</td>";
   	    	blist+="<td>"+obj.count+"</td>";
+  	    	
+  	    	if(${!empty mvo}){
   	    	blist+="<td id='u"+obj.idx+"'><button class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
   	    	blist+="<td><button class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	}else{
+  	    	blist+="<td id='u"+obj.idx+"'><button class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
+  	    	blist+="<td><button class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	}
   	    	blist+="</tr>"
-  	    	
   	    	// 제목 눌렀을때 나오는 화면
   	    	blist+="<tr id='contentsView"+obj.idx+"' style='display:none'>";
   	    	blist+="<td>내용</td>";
@@ -198,6 +203,7 @@
 	<div class = "panel-body rform" style="display: none">
 		<!-- 글쓰기 화면 -->
 		<form id="frm" class="form-horizontal" method="post">
+		 <input type="hidden" name="memId" value="${mvo.memId}">
 		  <div class="form-group">
 		    <label class="control-label col-sm-2" for="title">제목:</label>
 		    <div class="col-sm-10">

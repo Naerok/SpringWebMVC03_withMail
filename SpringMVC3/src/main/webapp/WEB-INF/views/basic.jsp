@@ -150,6 +150,18 @@
   		}else{
   		   $("#contentsView"+idx).css("display","none");
   		}
+  		
+  		// 조회수 누적
+  		if($("#cv"+idx).css("display")!="none"){
+  			$.ajax({
+  				url: "${cpath}/boardCountAjax.do",
+  				type: "get",
+  				data: {"idx" : idx},
+  				datatype: "json",
+  				success: function(data){$("#count"+idx).text(data.count);},
+  				error: function(){alert("error");}
+  			});
+  		}
   	}
   	
   	function goForm(){

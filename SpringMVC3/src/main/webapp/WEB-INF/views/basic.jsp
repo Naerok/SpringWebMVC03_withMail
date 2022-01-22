@@ -60,11 +60,17 @@
   	    	blist+="<td>"+obj.count+"</td>";
   	    	
   	    	if(${!empty mvo}){
-  	    	blist+="<td id='u"+obj.idx+"'><button class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
-  	    	blist+="<td><button class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	 if("${mvo.memId}"==obj.memId){
+  	    	  blist+="<td id='u"+obj.idx+"'><button class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
+  	    	  blist+="<td><button class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	 }else{
+  	    	  blist+="<td id='u"+obj.idx+"'><button disabled class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
+  	    	  blist+="<td><button disabled class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	 }
+  	    		 
   	    	}else{
-  	    	blist+="<td id='u"+obj.idx+"'><button class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
-  	    	blist+="<td><button class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
+  	    	 blist+="<td id='u"+obj.idx+"'><button disabled class='btn btn-info btn-sm' onclick='goUpdate("+obj.idx+")'>수정</button></td>"
+  	    	 blist+="<td><button disabled class='btn btn-warning btn-sm' onclick='goDelete("+obj.idx+")'>삭제</button></td>"
   	    	}
   	    	blist+="</tr>"
   	    	// 제목 눌렀을때 나오는 화면
@@ -72,7 +78,12 @@
   	    	blist+="<td>내용</td>";
   	    	blist+="<td colspan='6'><textarea rows='7' id='c"+obj.idx+"' class='form-control'>"+obj.contents+"</textarea>";
   	    	blist+="<br/>";
-	  		blist+="<button class='btn btn-info btn-sm' onclick='upClick("+obj.idx+")'>수정</button>";
+  	    	
+  	    	if("${mvo.memId}"==obj.memId){
+	  		 blist+="<button class='btn btn-info btn-sm' onclick='upClick("+obj.idx+")'>수정</button>";
+  	    	}else{
+	  		 blist+="<button disabled class='btn btn-info btn-sm' onclick='upClick("+obj.idx+")'>수정</button>";
+  	    	}
 	  		blist+="&nbsp;<button class='btn btn-warning btn-sm'>취소</button>";
 	  		blist+="&nbsp;<button class='btn btn-danger btn-sm' onclick='goClose("+obj.idx+")'>닫기</button>";
 	  		blist+="</td>";

@@ -39,6 +39,11 @@ public class BoardRestController {
 	public void boardTWUpdateAjax(Board vo) {
 		service.boardTWUpdateAjax(vo);
 	}
+	@RequestMapping("boardCountAjax.do")
+	public Board boardCountAjax(int idx) {
+		Board vo = service.boardCountAjax(idx);
+		return vo; // {     , "count" : 100}
+	}
 	
 	
 }

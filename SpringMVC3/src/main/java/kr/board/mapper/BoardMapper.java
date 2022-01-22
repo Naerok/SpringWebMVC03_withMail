@@ -28,5 +28,8 @@ public interface BoardMapper {
 	@Select("select * from member where memId=#{memId} and memPass=#{memPass}")
 	public Member login(Member vo);
 	
+	@Update("update board set count=count+1 where idx=#{idx}")
+	public void boardCountAjax(int idx);
+	
 	
 }

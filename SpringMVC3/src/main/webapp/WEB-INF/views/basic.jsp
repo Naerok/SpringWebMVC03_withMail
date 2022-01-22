@@ -57,7 +57,7 @@
   	    	blist+="<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>"+obj.title+"</a></td>";
   	    	blist+="<td id='w"+obj.idx+"'>"+obj.writer+"</td>";
   	    	blist+="<td>"+obj.indate+"</td>";
-  	    	blist+="<td>"+obj.count+"</td>";
+  	    	blist+="<td id='count"+obj.idx+"'>"+obj.count+"</td>";
   	    	
   	    	if(${!empty mvo}){
   	    	 if("${mvo.memId}"==obj.memId){
@@ -152,13 +152,15 @@
   		}
   		
   		// 조회수 누적
-  		if($("#cv"+idx).css("display")!="none"){
+  		if($("#contentsView"+idx).css("display")!="none"){
   			$.ajax({
   				url: "${cpath}/boardCountAjax.do",
   				type: "get",
   				data: {"idx" : idx},
   				datatype: "json",
-  				success: function(data){$("#count"+idx).text(data.count);},
+  				success: function(data){
+  					$("#count"+idx).text(data.count);
+  				},
   				error: function(){alert("error");}
   			});
   		}

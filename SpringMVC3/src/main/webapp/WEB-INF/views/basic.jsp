@@ -258,7 +258,7 @@
 		  </div>
 		</form>
 	</div>
-	<div class = "panel-footer">(panel-footer) 한글한글</div>
+	<div class = "panel-footer">(panel-footer)한글 게시판</div>
 	</div>
 </div>
 
